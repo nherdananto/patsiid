@@ -1,0 +1,107 @@
+{
+  "theme": "light",
+  "typography": {
+    "primary_font": "Inter, sans-serif",
+    "headings": {
+      "family": "Inter, sans-serif",
+      "weights": ["800", "900"],
+      "styling": "Extremely tight tracking (letter-spacing: -0.04em to -0.06em) on large headings. Uppercase overlines with wide tracking (0.2em). Ensure line-height is 1 to 1.1 max. Avoid generic bold; use Black (900) for maximum structural contrast against the light background.",
+      "sizes": {
+        "h1": "clamp(3rem, 8vw, 6rem)",
+        "h2": "clamp(2rem, 5vw, 4rem)",
+        "h3": "clamp(1.5rem, 3vw, 2.5rem)"
+      }
+    },
+    "body": {
+      "family": "Inter, sans-serif",
+      "weights": ["300", "400"],
+      "styling": "Loose line-height (1.6 to 1.8) for clean legibility. Text color should be #14213D or muted #667085, never pure black."
+    }
+  },
+  "colors": {
+    "background": {
+      "primary": "#F6F8FB",
+      "surface": "#FFFFFF"
+    },
+    "text": {
+      "primary": "#14213D",
+      "muted": "#667085",
+      "inverse": "#FFFFFF"
+    },
+    "brand": {
+      "navy": "#062B67",
+      "blue_primary": "#0B4EA2",
+      "blue_bright": "#1689E8",
+      "red_accent": "#E51B23"
+    },
+    "border": "#E4EAF1",
+    "strategy": "Predominantly light theme (#F6F8FB) for a clean, institutional, and highly trustworthy feel. Use Navy (#062B67) for high-contrast sections (e.g., Footer, major CTAs). The Accent Red (#E51B23) MUST be used extremely sparingly—only for thin decorative lines, notification dots, or kinetic interaction states (like a hover underline or a 1px border on an active state). No generic gradients; stick to solid colors with crisp boundaries."
+  },
+  "visual_enhancers": {
+    "borders": "1px solid #E4EAF1. Implement a 'Technical Blueprint' look with exposed grid lines between cards.",
+    "radius": "Subtle rounded corners (4px to 8px max). Avoid overly pill-shaped containers except for primary CTA buttons.",
+    "shadows": "Minimal ambient shadows. Rely on 1px borders and subtle background color variations to separate surfaces. When hovering cards, use a soft shadow (0 10px 30px rgba(6, 43, 103, 0.06)) and a slight -2px Y translation.",
+    "textures": "Subtle abstract network grid patterns or very faint SVG overlays (1px lines, 2% opacity) in the hero section to evoke 'digital ecosystem and telecommunications'."
+  },
+  "layouts": {
+    "strategy": "Bento grids and asymmetrical architectural layouts. Generous spacing (padding of 4rem to 8rem between sections). Optical alignment. For the '4 role cards' and '6 numbered benefit cards', use CSS Grid with 1px borders forming a structural digital blueprint.",
+    "hero": "Large kinetic typography. Split the headline 'Membangun Ekosistem Digital dan Telekomunikasi Indonesia Bersama' into masked block lines. Use a subtle parallax abstract digital background.",
+    "navigation": "Sticky navigation (fixed top). Must NOT be fully transparent when scrolling—use glassmorphism (backdrop-filter: blur(16px), background: rgba(255, 255, 255, 0.85), border-bottom: 1px solid #E4EAF1). Must include a hamburger menu trigger for mobile.",
+    "pages": ["index.html (Home)", "about.html (About PATSI)", "membership.html (Membership)", "contact.html (Contact)"]
+  },
+  "motion": {
+    "libraries": ["GSAP (gsap, ScrollTrigger)", "Lenis (momentum smooth scrolling)"],
+    "hero_reveal": "Masked line-by-line reveal using GSAP. Wrap each line of the H1 in a container with overflow: hidden. Translate the text up (y: 100% to 0%) with 'power4.out' easing over 1.2s.",
+    "marquee": "Slow editorial marquee for the 17 member company logos. Seamless infinite horizontal translation via vanilla CSS keyframes or GSAP.",
+    "scroll_reveals": "Sections fade in and translate up slightly (y: 40px) when they enter the viewport via GSAP ScrollTrigger.",
+    "parallax": "Subtle parallax on hero backgrounds or abstract floating visual elements using GSAP ScrollTrigger (yPercent).",
+    "micro_interactions": "Buttons: Hover state reveals a red accent (#E51B23) line (e.g., scaleX(1) on an ::after pseudo-element). Cards: Subtle scale or border color shift to #0B4EA2 on hover."
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRpZ2l0YWwlMjBuZXR3b3JrfGVufDB8fHx8MTc4NjQzNzMyN3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract blue digital network with lines and dots. Use as a subtle background element in the Hero or Call to Action sections.",
+        "category": "background"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1661095699423-d6ccb41e211f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHw0fHx0ZWxlY29tbXVuaWNhdGlvbnMlMjBpbmZyYXN0cnVjdHVyZXxlbnwwfHx8fDE3ODY0MzczMjh8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Telecommunications infrastructure/tower. Use in the About page or Role cards as a structural thematic visual.",
+        "category": "thematic"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBtZWV0aW5nfGVufDB8fHx8MTc4NjQzNzMyN3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Professional corporate meeting. Use in the 'Kolaborasi' card or Membership page to represent the association's community and dialogue.",
+        "category": "contextual"
+      }
+    ],
+    "logos": [
+      {
+        "url": "./patsi.id_logo.png",
+        "description": "Brand Logo (Navy/Blue with red accents). Must be used in the Navigation and Footer.",
+        "category": "brand"
+      }
+    ]
+  },
+  "testing": {
+    "attributes": "All interactive and key informational elements MUST include a 'data-testid' attribute. E.g., 'data-testid=\"nav-about-link\"', 'data-testid=\"contact-submit-button\"', 'data-testid=\"membership-cta\"'."
+  },
+  "instructions_to_main_agent": [
+    "Strictly use ONLY vanilla HTML, CSS, and JavaScript. DO NOT use React, Vue, Tailwind, or any UI frameworks. Write pure semantic HTML and custom CSS.",
+    "Use CDN links for GSAP (Core & ScrollTrigger), Lenis, and Phosphor Icons/Lucide (via CDN if available) or inline SVGs.",
+    "Since Shadcn UI cannot be used, you must build robust vanilla CSS components (buttons, nav, cards, forms) that look incredibly polished. Rely heavily on CSS Grid, Flexbox, and CSS Custom Properties (Variables) for theme colors.",
+    "For the 17 member companies on the Home page, build a slow CSS-based marquee/ticker that scrolls seamlessly.",
+    "Ensure 'Inter' font is imported from Google Fonts. Apply -0.05em tracking to large headings for a premium, non-generic structural feel.",
+    "Add 'data-testid' to every link, button, and form element.",
+    "Create 4 separate HTML files: index.html, about.html, membership.html, contact.html. They must share a common style.css and main.js.",
+    "For the Home Page hero, implement the 'kinetic masked line reveal' explicitly requested by the user: break the H1 into multiple lines, wrap each in a container with overflow:hidden, and animate them up on load using GSAP."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Avoid the 'AI slop' aesthetic. Don't make generic centered layouts or simplistic gradients.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Never use AI assistant Emoji characters for icons.",
+    "Create depth through layered design elements with z-index hierarchy and crisp borders.",
+    "Do not center align the body container. Follow natural human reading flows (left-aligned predominantly).",
+    "DO NOT use a fully transparent background in headers/overlays that sit on top of content. Use glassmorphism or solid colors."
+  ]
+}
