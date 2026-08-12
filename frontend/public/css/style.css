@@ -211,6 +211,8 @@ html.js:not(.no-motion) .hero-fade { opacity: 0; transform: translateY(24px); }
   opacity: 0.85; transition: opacity 0.3s, transform 0.3s var(--ease-out);
 }
 .member-item img:hover { opacity: 1; transform: translateY(-3px); }
+.member-item--dark { background: var(--navy); border-radius: 6px; padding: 0.55rem 1.1rem; }
+.member-item--dark img { opacity: 1; height: 30px; }
 
 /* ---------- Split layout ---------- */
 .split { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2.5rem, 6vw, 5.5rem); align-items: start; }
