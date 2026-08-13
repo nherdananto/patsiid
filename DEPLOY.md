@@ -202,6 +202,42 @@ curl -X POST https://patsi.id/api/contact \
 # balasan harus berisi "email_sent": true → cek inbox pengurus@patsi.id
 ```
 
+## Cara Redeploy (Update Website yang Sudah Berjalan)
+
+Jika situs sudah live dan ada perubahan (logo baru, konten baru, dll), lakukan:
+
+**Jika deploy via git:**
+```bash
+cd /tmp/patsi-repo
+git pull
+rsync -av --delete frontend/public/ /var/www/patsi/
+rsync -av backend/ /var/www/patsi-api/
+```
+
+**Jika deploy via zip:**
+```bash
+# di komputer lokal, upload zip terbaru:
+scp patsi-static-site.zip user@IP-SERVER:/tmp/
+
+# di server:
+sudo apt install unzip -y
+unzip -o /tmp/patsi-static-site.zip -d /var/www/patsi
+```
+
+Perubahan file statis (HTML/CSS/JS/gambar) langsung aktif tanpa restart apa pun. Jika ada perubahan pada backend (`server.py`, `.env`, atau `requirements.txt`):
+
+```bash
+cd /var/www/patsi-api
+./venv/bin/pip install -r requirements.txt   # hanya jika requirements berubah
+sudo systemctl restart patsi-api             # wajib setelah ubah .env atau server.py
+```
+
+Verifikasi setelah redeploy:
+```bash
+curl https://patsi.id/api/          # API hidup
+curl -I https://patsi.id/           # halaman utama 200
+```
+
 ## Checklist Akhir
 
 - [ ] https://patsi.id membuka halaman Home
